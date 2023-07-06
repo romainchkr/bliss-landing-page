@@ -1,11 +1,11 @@
 import React from'react';
-//rotas
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-//pages
+import './App.css';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-//componentes
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer/Footer';
 

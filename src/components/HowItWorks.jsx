@@ -7,11 +7,11 @@ import {
 } from '@mui/material'
 import Title from './Title'
 // img
-import imgDetail from '../assets/pexels-alex-staudinger-1732414.jpg';
-import imgDetail2 from '../assets/pexels-pixabay-271816.jpg';
+import imgDetail from '../assets/old/pexels-alex-staudinger-1732414.jpg';
+import imgDetail2 from '../assets/old/pexels-pixabay-271816.jpg';
 
 
-const GetStarted = () => {
+const HowItWorks = () => {
 
     const CustomGridItem = styled(Grid) ({
         display: 'flex',
@@ -107,4 +107,4 @@ const GetStarted = () => {
     )
 }
 
-export default GetStarted;
+export default HowItWorks;

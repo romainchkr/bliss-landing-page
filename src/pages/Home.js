@@ -1,17 +1,19 @@
 import React from 'react'
-import GetInTouch from '../components/GetInTouch';
-import GetStarted from '../components/GetStarted';
+import Download from '../components/Download';
+import HowItWorks from '../components/HowItWorks';
 import Header from '../components/Header';
+import Benefits from "../components/Benefits/Benefits";
 
 const Home = () => {
-  return (
-    <>
-    <Header />
-    <GetStarted />
-    <GetInTouch />
-    </>
+    return (
+        <>
+            <Header />
+            <HowItWorks />
+            <Benefits />
+            <Download />
+        </>
 
-  )
+    )
 }
 
 export default Home

@@ -61,7 +61,6 @@ const Navbar = () => {
                 <Typography
                 variant="h6"
                 component="h2"
-
                 >
                     HBSales
                 </Typography>

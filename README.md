@@ -52,8 +52,8 @@ const Home = () => {
   return (
     <>
     <Header />
-    <GetStarted />
-    <GetInTouch />
+    <HowItWorks />
+    <Download />
     </>
 
   )
