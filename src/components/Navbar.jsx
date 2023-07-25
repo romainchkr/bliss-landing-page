@@ -5,21 +5,26 @@ import {
     Box,
     List,
     ListItem,
-    Typography, 
+    Typography,
     styled,
     ListItemButton,
-    ListItemText,
+    ListItemText, Button, ThemeProvider,
 } from '@mui/material';
 // menu
 import DrawerItem from './DrawerItem';
 // rotas
 import { Link } from 'react-router-dom';
+// img
+import BlissIcon from '../assets/logo_violet.png';
+
+import {theme} from "../theme";
 
 
 // personalizacao
 const StyledToolbar = styled(Toolbar) ({
     display: 'flex',
-    justifyContent: 'space-between',
+    alignItems: 'center',
+    justifyContent: 'center',
 });
 
 const ListMenu = styled(List)(({ theme }) => ({
@@ -49,46 +54,46 @@ const itemList = [
 const Navbar = () => {
     
     return (
-        <AppBar 
-        component="nav" 
-        position="sticky"
-        sx={{ 
-            backgroundColor: 'orange', 
-        }}
-        elevation={0}
-        >
-            <StyledToolbar>
-                <Typography
-                variant="h6"
-                component="h2"
-                >
-                    HBSales
-                </Typography>
-                <Box sx={{display: { xs: 'block', sm: 'none' } }}>
-                    <DrawerItem /> 
-                </Box>
-                <ListMenu>
-                    {itemList.map( ( item ) => {
-                        const { text } = item;
-                        return(
-                            <ListItem key={text}>
-                                <ListItemButton component={Link} to={item.to}
-                                sx={{
-                                    color: '#fff',
-                                    "&:hover": {
-                                        backgroundColor: 'transparent',
-                                        color: '#1e2a5a',
-                                    }
-                                }}
-                                >
-                                    <ListItemText primary={text} />
-                                </ListItemButton>
-                            </ListItem>
-                        )
-                    })}
-                </ListMenu>
-            </StyledToolbar>
-        </AppBar>
+        <ThemeProvider theme={theme}>
+            <AppBar
+            component="nav"
+            position="fixed"
+            sx={{
+                backgroundColor: 'white',
+                p: '16px 2%'
+            }}
+            elevation={0}>
+                <StyledToolbar>
+                    <Button variant="contained" color="secondary" sx={{ml: {xs: 'none', md: 'auto'}, display: {xs: 'none', md: 'block'}, visibility: "hidden"}}>Télécharger</Button>
+                    <img src={BlissIcon} alt="icon bliss" width="150px" height="auto" />
+                    <Button variant="contained" color="secondary" sx={{ml: 'auto'}}>Télécharger</Button>
+
+                    {/*<Box sx={{display: { xs: 'block', sm: 'none' } }}>*/}
+                    {/*    <DrawerItem /> */}
+                    {/*</Box>*/}
+                    {/*<ListMenu>*/}
+                    {/*    {itemList.map( ( item ) => {*/}
+                    {/*        const { text } = item;*/}
+                    {/*        return(*/}
+                    {/*            <ListItem key={text}>*/}
+                    {/*                <ListItemButton component={Link} to={item.to}*/}
+                    {/*                sx={{*/}
+                    {/*                    color: '#fff',*/}
+                    {/*                    "&:hover": {*/}
+                    {/*                        backgroundColor: 'transparent',*/}
+                    {/*                        color: '#1e2a5a',*/}
+                    {/*                    }*/}
+                    {/*                }}*/}
+                    {/*                >*/}
+                    {/*                    <ListItemText primary={text} />*/}
+                    {/*                </ListItemButton>*/}
+                    {/*            </ListItem>*/}
+                    {/*        )*/}
+                    {/*    })}*/}
+                    {/*</ListMenu>*/}
+                </StyledToolbar>
+            </AppBar>
+        </ThemeProvider>
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import {  
+import {
     Button,
-    Stack,
+    Stack, Typography,
 } from '@mui/material'
 import Title from './Title'
 import Paragraph from './Paragraph'
@@ -9,29 +9,31 @@ import { Link } from 'react-router-dom'
 
 const Download = () => {
     return (
-        <Stack 
+        <Stack
         component='section'
         direction="column"
         justifyContent= 'center'
         alignItems='center'
         sx={{
-            py: 10,
-            mx: 6,
+            py: '140px',
+            background: 'var(--gradient)'
         }}
         >
-            <Title 
-            text={
-                'Télécharge l’application'
-                } 
-            textAlign={'center'}
+            <Title
+                text={
+                    'Trouve ton prochain crush maintenant'
+                }
+                textAlign={'center'}
+                color="primary"
             />
-            <Paragraph 
+            <Paragraph
             text={
-                'Disponible gratuitement sur App Store et Google Play'
+                'Télécharge gratuitement Bliss'
             }
             maxWidth = {'sm'}
             mx={0}
             textAlign={'center'}
+            color='var(--primary)'
             />
             {/*TODO*/}
             <Button component={Link} 
@@ -39,21 +41,17 @@ const Download = () => {
             variant="contained" 
             type="submit"
             size="medium"
-            sx= {{ 
-                fontSize: '0.9rem',
-                textTransform: 'capitalize', 
-                py: 2,
-                px: 4,
-                mt: 3, 
-                mb: 2,
-                borderRadius: 0,
-                backgroundColor: '#14192d',
-                "&:hover": {
-                    backgroundColor: '#1e2a5a',
+            sx={{
+                "&&:hover": {
+                    backgroundColor: "white",
+                    color: 'var(--secondary)'
                 }
             }}
             >
-                Télécharger
+                <Typography variant="body1">
+                    Télécharger
+                </Typography>
+
             </Button>
  
         </Stack>

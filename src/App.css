@@ -1,3 +1,11 @@
+:root {
+    --gradient: linear-gradient(145deg, #F02FFD 6.25%, #7873F5 92.75%);
+    --primary: #F8F7FF;
+    --secondary: #333333;
+    --tertiary: #C98BF2;
+    --maxWidth: 1140px;
+}
+
 * {
     font-family: "Montserrat", sans-serif;
     margin: 0;
@@ -8,13 +16,12 @@ body {
 }
 
 section {
-    padding: 10vh 5vw 5vh 5vw;
+    padding: 5vh 5vw 5vh 5vw;
 }
 
 .atoutwrap {
     display: flex;
     justify-content: space-around;
     margin: 30px 0;
-    gap: 60px;
     align-items: center;
 }

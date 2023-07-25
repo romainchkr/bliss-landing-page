@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import React from 'react'
 
-const Paragraph = ({ text, maxWidth, mx, textAlign }) => {
+const Paragraph = ({ text, maxWidth, mx, textAlign, color='#7b7b7b' }) => {
   return (
     <Typography
     sx={{
@@ -9,7 +9,7 @@ const Paragraph = ({ text, maxWidth, mx, textAlign }) => {
       mx: mx,
       textAlign: textAlign,
       py: 3,
-      color: '#7b7b7b',
+      color: {color},
     }}
     >
         {text}

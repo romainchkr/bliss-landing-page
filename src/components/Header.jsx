@@ -2,23 +2,24 @@ import React from 'react'
 import { Box, Button, styled, Typography } from "@mui/material";
 import { Link } from 'react-router-dom'
 //img
-import headerImg from '../assets/old/pexels-binyamin-mellish-186078.png'
+import headerImg from '../assets/app_overview2.png'
 
 const Header = () => {
-
     const CustomBox = styled(Box) (({ theme }) => ({
-        minHeight: '80vh',
+        // minHeight: '80vh',
+        height: '100svh',
         display: 'flex',
         justifyContent: 'center',
         // tamanhos
         gap: theme.spacing(2),
         paddingTop: theme.spacing(10),
         // cor de fundo
-        backgroundColor: 'orange',
+        backgroundColor: 'var(--tertiary)',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
             alignItems: 'center',
             textAlign: 'center',
+            paddingTop: theme.spacing(0),
         }
     }));
 
@@ -37,18 +38,15 @@ const Header = () => {
   return  (
         <CustomBox component='header'>
             {/*  Box text  */}
-            <BoxText 
-            component='section'
-            >
-                <Typography
-                variant='h2'
-                component= 'h1'
-                sx={{
+            <BoxText
+            component='section'>
+                <Box height="85px"></Box>
+                <Typography sx={{
+                    typography: { xs: 'h3', md: 'h2' },
                     fontWeight: 700,
-                    color: '#fff',
-                }}
-                >
-                    We'll build house of your dream
+                    color: '#fff' }}
+                component= 'h1' >
+                    Le premier jeu de rencontre
                 </Typography>
 
                 <Typography
@@ -60,57 +58,38 @@ const Header = () => {
                     color: '#fff',
                 }}
                 >
-                    We have 9000 more review and our customers
-                    trust on out property and quality products.
+                    L'app qui va remplacer Tinder
                 </Typography>
 
-                <Box>
+                <Box display="flex" gap="5px" justifyContent={{xs: "center", md: 'start'}}>
                     <Button 
-                    variant='contained'
-                    sx={{
-                        mr: 2,
-                        px: 4, 
-                        py: 1,
-                        fontSize: '0.9rem',
-                        textTransform: 'capitalize',
-                        borderRadius: 0,
-                        borderColor: '#14192d',
-                        color: '#fff',
-                        backgroundColor: '#14192d',
-                        "&&:hover": {
-                            backgroundColor: "#343a55"
-                        },
-                        "&&:focus": {
-                            backgroundColor: "#343a55"
-                        }
-                    }}
-                    >
-                        buy now
+                        variant='contained'
+                        color='secondary'
+                        sx={{
+                            "&&:hover": {
+                                backgroundColor: "white",
+                                color: 'var(--secondary)'
+                            }
+                        }}>
+                        <Typography variant="body1" textAlign="center">
+                        Jouer maintenant
+                        </Typography>
                     </Button>
                     <Button 
-                    component={Link} 
-                    to={'/about'}
-                    variant='outlined'
-                    sx={{
-                        px: 4, 
-                        py: 1,
-                        fontSize:'0.9rem',
-                        textTransform: 'capitalize',
-                        borderRadius: 0,
-                        color: '#fff',
-                        backgroundColor: 'transparent',
-                        borderColor: '#fff',
-                        "&&:hover": {
-                            color: '#343a55',
-                            borderColor: '#343a55',
-                        },
-                        "&&:focus": {
-                            color: '#343a55',
-                            borderColor: '#343a55',
-                        }
-                    }}
+                        component={Link}
+                        to={'/about'}
+                        variant='contained'
+                        color='primary'
+                        sx={{
+                            "&&:hover": {
+                                backgroundColor: "white",
+                                color: 'var(--secondary)'
+                            }
+                        }}
                     >
-                        explore
+                        <Typography variant="body1" textAlign="center">
+                        Télécharger l'app
+                        </Typography>
                     </Button>
                 </Box>
             </BoxText>
@@ -118,23 +97,25 @@ const Header = () => {
             <Box sx={theme => ({
                 [theme.breakpoints.down('md')]:{
                     flex: '1',
-                    paddingTop: '30px',
+                    paddingTop: '0px',
                     alignSelf: 'center',
                 },
                 [theme.breakpoints.up('md')]:{
                     flex: '2',
-                    alignSelf: 'flex-end',
+                    alignSelf: 'center',
                 },
-            })}
-            >
-                <img
-                src={headerImg}
-                alt="headerImg"
-                style={{ 
-                    width: "100%", 
-                    marginBottom: -15,
-                }}
+            })}>
+                <Box height={{xs: "40vh", md:"80vh"}}>
+                    <img
+                        src={headerImg}
+                        alt="headerImg"
+                        style={{
+                            width: "auto",
+                            height: '100%',
+                            marginBottom: -15,
+                        }}
                 />
+                </Box>
             </Box>
 
         </CustomBox>

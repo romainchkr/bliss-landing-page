@@ -5,24 +5,29 @@ import {
 } from '@mui/material'
 
 const BenefitBlock = ({img, title, content}) => {
-    const CustomTypographyTitle = styled(Typography) ({
+    const CustomTypographyTitle = styled(Typography)({
         fontSize: '30px',
         lineHeight: '1.5',
-        color: 'black',
+        color: 'var(--primary)',
         fontWeight: '700',
-        fontFamily: 'Montserrat'
+        textAlign: 'left'
     })
 
-    const CustomTypography = styled(Typography) ({
+    const CustomTypography = styled(Typography)({
         fontSize: '1em',
         lineHeight: '1.5',
-        color: '#6b6b6b',
+        color: 'var(--primary)',
+        textAlign: 'left'
     })
 
     return (
-        <Box display="flex" m="10" maxWidth="500px" flexDirection="column" gap="20px" alignItems={{xs: 'center', md: 'start'}} textAlign={{xs: 'center', md: 'left'}}>
-            <img src={img} alt="icon" width="100px"/>
-            <Box display="flex" flexDirection="column" maxWidth="400px">
+        <Box display="flex" m="10" maxWidth="500px" flexDirection="row" gap="20px" padding="40px"
+              alignItems="start" textAlign={{xs: 'center', md: 'left'}} justifyContent="start"
+              border='solid 1px var(--primary)' borderRadius="12px" alignSelf={{xs: 'center', md: 'stretch'}}>
+            <Box display="flex" alignItems="end" justifyContent="start" flex="1 1 60%" minWidth="20%">
+                <img src={img} alt="icon" width="100%" height="auto"/>
+            </Box>
+            <Box flex="1 1 auto" display="flex" flexDirection="column" maxWidth="400px" alignItems="stretch" justifyContent="space-between" mb="2">
                 <CustomTypographyTitle variant="h2">{title}</CustomTypographyTitle>
                 <CustomTypography variant="body1">{content}</CustomTypography>
             </Box>
