@@ -13,7 +13,7 @@ import emojiStar from '../../assets/emoji_star.png';
 const Benefits = () => {
 
     return (
-        <Box component="section" bgcolor="var(--secondary)">
+        <Box component="section" className="section-black" bgcolor="var(--secondary)">
             <Box component="div" width={{xs: '90%'}} margin='auto'>
                 <Box className="atoutwrap" flexDirection={{xs: 'column', md: 'row'}} gap={{xs: "30px", md: "60px"}}>
                     <BenefitBlock img={emojiFun} title="Amuse toi !" content="Bliss est conçu pour te divertir et t'amuser. Alors pas de pression ! Laisse-toi guider par le feeling et fait des rencontres naturellement." />

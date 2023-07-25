@@ -10,10 +10,8 @@ const Header = () => {
         height: '100svh',
         display: 'flex',
         justifyContent: 'center',
-        // tamanhos
         gap: theme.spacing(2),
         paddingTop: theme.spacing(10),
-        // cor de fundo
         backgroundColor: 'var(--tertiary)',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
@@ -26,8 +24,10 @@ const Header = () => {
     const BoxText = styled(Box) (({ theme }) => ({
         flex: '1',
         paddingLeft: theme.spacing(8),
+        paddingTop: '5vh',
+        paddingBottom: '5vh',
         [theme.breakpoints.down('md')]: {
-            flex: '2',
+            flex: '0',
             textAlign: 'center',
             paddingLeft: theme.spacing(2),
             paddingRight: theme.spacing(2),
@@ -39,8 +39,8 @@ const Header = () => {
         <CustomBox component='header'>
             {/*  Box text  */}
             <BoxText
-            component='section'>
-                <Box height="85px"></Box>
+            component='section' className="section-purple">
+                <Box height="90px"></Box>
                 <Typography sx={{
                     typography: { xs: 'h3', md: 'h2' },
                     fontWeight: 700,
@@ -61,8 +61,9 @@ const Header = () => {
                     L'app qui va remplacer Tinder
                 </Typography>
 
-                <Box display="flex" gap="5px" justifyContent={{xs: "center", md: 'start'}}>
-                    <Button 
+                <Box display="flex" gap="10px" justifyContent={{xs: "center", md: 'start'}}
+                flexDirection={{xs: "column", sm: 'row'}} width={{xs: '80%', sm: "auto"}} m={{xs: "auto"}}>
+                    <Button
                         variant='contained'
                         color='secondary'
                         sx={{
@@ -75,7 +76,7 @@ const Header = () => {
                         Jouer maintenant
                         </Typography>
                     </Button>
-                    <Button 
+                    <Button
                         component={Link}
                         to={'/about'}
                         variant='contained'
@@ -94,7 +95,7 @@ const Header = () => {
                 </Box>
             </BoxText>
 
-            <Box sx={theme => ({
+            <Box component='section'  className="section-purple" p={0} sx={theme => ({
                 [theme.breakpoints.down('md')]:{
                     flex: '1',
                     paddingTop: '0px',

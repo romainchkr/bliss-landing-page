@@ -11,9 +11,8 @@ const Title = ({ text, textAlign, color }) => {
       fontWeight: '700',
       textAlign: textAlign,
    }}
-    >
-      {text}
-    </Typography>
+    dangerouslySetInnerHTML={{ __html: text }}
+    />
   )
 }
 

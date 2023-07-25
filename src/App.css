@@ -7,7 +7,7 @@
 }
 
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Lexend", sans-serif;
     margin: 0;
 }
 
@@ -16,7 +16,7 @@ body {
 }
 
 section {
-    padding: 5vh 5vw 5vh 5vw;
+    padding: 10vh 5vw;
 }
 
 .atoutwrap {
@@ -24,4 +24,10 @@ section {
     justify-content: space-around;
     margin: 30px 0;
     align-items: center;
+}
+
+.gradientText {
+    background: -webkit-linear-gradient(145deg, #F02FFD 6.25%, #7873F5 92.75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

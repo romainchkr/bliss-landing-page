@@ -1,13 +1,12 @@
 import React from 'react'
 import { 
     Box,
-    Grid,
     styled,
     Typography,
 } from '@mui/material'
 import Title from './Title'
 // img
-import App1 from '../assets/app1.png';
+import App1 from '../assets/app1_2.png';
 
 
 const HowItWorks = () => {
@@ -22,15 +21,23 @@ const HowItWorks = () => {
 
     return (
         <>
-            <Box component="section" bgcolor="white" width="90%" margin="auto" py="100px" maxWidth="var(--maxWidth)">
-                <Box display="flex" alignItems="center" justifyContent="space-between">
-                    <Box flex="0 0 45%">
-                        <img src={App1} alt="application" width="100%"/>
+            <Box component="section" className="section-white" bgcolor="white" width="90%" margin="auto" maxWidth="var(--maxWidth)">
+                <Box display="flex" alignItems="center" justifyContent="space-between" flexDirection={{xs: 'column', md: 'row'}}>
+                    <Box flex="1 1 45%" display="flex" alignItems="stretch" justifyContent="center">
+                        <Box component="img"
+                            sx={{
+                                flex:"1 1 auto", minWidth: "100%",
+                            }}
+                            width="100%"
+                            // height={{xs: "400px", md: "auto"}}
+                            alt="application"
+                            src={App1}
+                        />
                     </Box>
-                    <Box display="flex" flexDirection="column" justifyContent="start" alignItems="start" flex="0 0 45%">
+                    <Box flex="1 1 45%" display="flex" flexDirection="column" justifyContent="start" alignItems="start">
                         <Title
                             text={
-                                "Le système de match le plus amusant n'attend que toi"
+                                "Le système de match <span class='gradientText'>le plus amusant</span> n'attend que toi"
                             }
                             color="secondary"
                         />
@@ -39,15 +46,15 @@ const HowItWorks = () => {
                 </Box>
             </Box>
 
-            <Box component="section" bgcolor="white" width="90%" margin="auto" py="100px" maxWidth="var(--maxWidth)">
-                <Box display="flex" alignItems="center" justifyContent="space-between">
+            <Box component="section" className="section-white" bgcolor="white" width="90%" margin="auto" py="100px" maxWidth="var(--maxWidth)">
+                <Box display="flex" alignItems="center" justifyContent="space-between" flexDirection={{xs: 'column', md: 'row'}}>
                     <Box flex="0 0 45%">
                         <img src={App1} alt="application" width="100%"/>
                     </Box>
                     <Box display="flex" flexDirection="column" justifyContent="start" alignItems="start" flex="0 0 45%">
                         <Title
                             text={
-                                "Echange avec les autres profils avant de séléctionner celui qui te  correspond le plus !"
+                                "Echange avec les autres profils avant de séléctionner celui qui te <span class='gradientText'>correspond le plus</span> !"
                             }
                             color="secondary"
                         />
@@ -56,15 +63,15 @@ const HowItWorks = () => {
                 </Box>
             </Box>
 
-            <Box component="section" bgcolor="white" width="90%" margin="auto" py="100px" maxWidth="var(--maxWidth)">
-                <Box display="flex" alignItems="center" justifyContent="space-between">
+            <Box component="section" className="section-white" bgcolor="white" width="90%" margin="auto" py="100px" maxWidth="var(--maxWidth)">
+                <Box display="flex" alignItems="center" justifyContent="space-between" flexDirection={{xs: 'column', md: 'row'}}>
                     <Box flex="0 0 45%">
                         <img src={App1} alt="application" width="100%"/>
                     </Box>
                     <Box display="flex" flexDirection="column" justifyContent="start" alignItems="start" flex="0 0 45%">
                         <Title
                             text={
-                                "Un événement toutes les semaines !"
+                                "<span class='gradientText'>Un événement toutes</span> les semaines !"
                             }
                             color="secondary"
                         />

@@ -1,8 +1,8 @@
 import React from 'react'
-import { 
-  Box, 
-  Stack, 
-  styled, 
+import {
+  Box, Divider,
+  Stack,
+  styled,
   Typography,
 } from '@mui/material'
 import Link from '@mui/material/Link';
@@ -25,7 +25,7 @@ const Footer = () => {
   const BoxRow = styled(Box) (({ theme }) => ({
     display: 'flex',
     flexDirection: 'row',
-    backgroundColor: '#ededed',
+    backgroundColor: 'white',
     flex: 1,
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
@@ -34,78 +34,53 @@ const Footer = () => {
   }));
 
   return (
-    
-    <BoxRow 
-    component = 'footer'
-    sx={{
-      py: 4,
-      px: 2,
-    }}
-    >
-      <StackColumn>
-        <FooterTitle text={'address'} />
-        <FooterLink 
-        text={'15th Louis St, london 92382, eng'} 
-        />
-        <FooterLink 
-        text={'25 999-345-10800'} 
-        />
-        <FooterLink 
-        text={'info@housesales.com'} 
-        />
-      </StackColumn>
-      
-      <StackColumn>
-        <FooterTitle text={'our services'} />
-        <FooterLink text={'buy house'} />
-        <FooterLink text={'sell house'} />
-        <FooterLink text={'rent house'} />
-        <FooterLink text={'build house'} />
-      </StackColumn>
-      <StackColumn>
-        <FooterTitle text={'our company'} />
-        <FooterLink text={'reporting'} />
-        <FooterLink text={'get in touch'} />
-        <FooterLink text={'management'} />
-      </StackColumn>
+    <Box component='footer' sx={{ py: 4, px: 2 }}>
+      <BoxRow>
+        <StackColumn>
+          <FooterTitle text={'bliss'} />
+          <Stack
+              direction='row'
+              width= '70px'
+              maxWidth='100%'
+              justifyContent='space-between'
+              alignItems="center"
+          >
+            <FooterLink text={'Contact'} />
+            <Link href="#" variant="body2"
+                  sx={{
+                    ml: 1,
+                    color: '#414141',
+                    "&:hover": {
+                      color: '#1c2859',
+                    }
+                  }}
+            >
+              <InstagramIcon />
+            </Link>
+          </Stack>
 
-      <StackColumn>
-        <FooterTitle text={'hBSales'} />
-        <Stack 
-        direction='row' 
-        width= '70px'
-        maxWidth='100%'
-        justifyContent='space-between'
-        >
-          <Link href="#" variant="body2" 
-          sx={{
-            color: '#414141',
-            "&:hover": {
-              color: '#1c2859',
-            }
-          }}
-          >
-            <InstagramIcon />  
-          </Link> 
-          <Link href="#"variant="body2" 
-          sx={{
-            color: '#414141',
-            "&:hover": {
-              color: '#1c2859',
-            }
-          }}
-          >
-            <FacebookIcon />
-          </Link> 
-        </Stack>
-        <Typography 
-        variant='caption'
-        component='p' 
-        >
-          &copy; 2022 HBSales Inc.
+        </StackColumn>
+
+        {/*<StackColumn>*/}
+        {/*  <FooterTitle text={'ENTREPRISE'} />*/}
+        {/*  <FooterLink text={'A propos'} />*/}
+        {/*  <FooterLink text={'Presse'} />*/}
+        {/*  <FooterLink text={'Contact'} />*/}
+        {/*</StackColumn>*/}
+        <StackColumn>
+          <FooterTitle text={'Legal'} />
+          <FooterLink text={'Confidentialité'} />
+          <FooterLink text={"Condition d'utilisation"} />
+          {/*<FooterLink text={'Cookies'} />*/}
+        </StackColumn>
+      </BoxRow>
+      <Box>
+        <Divider sx={{m: 2}}/>
+        <Typography variant='caption' component='p' textAlign="center">
+          &copy; 2023 Bliss Dating Game Inc.
         </Typography>
-      </StackColumn>
-    </BoxRow>
+      </Box>
+    </Box>
   )
 }
 

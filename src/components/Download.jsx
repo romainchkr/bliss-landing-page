@@ -11,11 +11,11 @@ const Download = () => {
     return (
         <Stack
         component='section'
+        className="section-white"
         direction="column"
         justifyContent= 'center'
         alignItems='center'
         sx={{
-            py: '140px',
             background: 'var(--gradient)'
         }}
         >
@@ -48,7 +48,7 @@ const Download = () => {
                 }
             }}
             >
-                <Typography variant="body1">
+                <Typography variant="body1" p={0.5}>
                     Télécharger
                 </Typography>
 

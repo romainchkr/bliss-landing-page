@@ -1,57 +1,53 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {
     AppBar,
     Toolbar,
-    Box,
-    List,
-    ListItem,
-    Typography,
     styled,
-    ListItemButton,
-    ListItemText, Button, ThemeProvider,
+    Button,
+    ThemeProvider,
 } from '@mui/material';
-// menu
-import DrawerItem from './DrawerItem';
-// rotas
-import { Link } from 'react-router-dom';
-// img
-import BlissIcon from '../assets/logo_violet.png';
+
+import BlissPurpleIcon from '../assets/logo_violet.png';
+import BlissWhiteIcon from '../assets/logo_blanc.png';
+import BlissBlackIcon from '../assets/logo_noir.png';
 
 import {theme} from "../theme";
 
-
-// personalizacao
 const StyledToolbar = styled(Toolbar) ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
 });
 
-const ListMenu = styled(List)(({ theme }) => ({
-    display: 'none',
-    [theme.breakpoints.up("sm")] : {
-        display: "flex",
-    },
-}));
-
-//rotas
-const itemList = [
-    {
-      text: "Home",
-      to: "/" 
-    },
-    {
-      text: "About",
-      to: "/about"
-    },
-    {
-        text: "Contact",
-        to: "/contact"
-    }
-];
-
-
 const Navbar = () => {
+    // const [navColor, setNavColor] = useState('white');
+    const [navColor, setNavColor] = useState('var(--tertiary)');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = document.querySelectorAll('section');
+            const navbarHeight = document.querySelector('nav').offsetHeight;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - navbarHeight;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const scrollPosition = window.scrollY;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    if(section.classList.contains('section-black')) {
+                        setNavColor('var(--secondary)');
+                    } else if(section.classList.contains('section-purple')) {
+                        setNavColor('var(--tertiary)');
+                    } else if(section.classList.contains('section-white')) {
+                        setNavColor('white');
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     
     return (
         <ThemeProvider theme={theme}>
@@ -59,38 +55,14 @@ const Navbar = () => {
             component="nav"
             position="fixed"
             sx={{
-                backgroundColor: 'white',
+                background: navColor,
                 p: '16px 2%'
             }}
             elevation={0}>
                 <StyledToolbar>
                     <Button variant="contained" color="secondary" sx={{ml: {xs: 'none', md: 'auto'}, display: {xs: 'none', md: 'block'}, visibility: "hidden"}}>Télécharger</Button>
-                    <img src={BlissIcon} alt="icon bliss" width="150px" height="auto" />
-                    <Button variant="contained" color="secondary" sx={{ml: 'auto'}}>Télécharger</Button>
-
-                    {/*<Box sx={{display: { xs: 'block', sm: 'none' } }}>*/}
-                    {/*    <DrawerItem /> */}
-                    {/*</Box>*/}
-                    {/*<ListMenu>*/}
-                    {/*    {itemList.map( ( item ) => {*/}
-                    {/*        const { text } = item;*/}
-                    {/*        return(*/}
-                    {/*            <ListItem key={text}>*/}
-                    {/*                <ListItemButton component={Link} to={item.to}*/}
-                    {/*                sx={{*/}
-                    {/*                    color: '#fff',*/}
-                    {/*                    "&:hover": {*/}
-                    {/*                        backgroundColor: 'transparent',*/}
-                    {/*                        color: '#1e2a5a',*/}
-                    {/*                    }*/}
-                    {/*                }}*/}
-                    {/*                >*/}
-                    {/*                    <ListItemText primary={text} />*/}
-                    {/*                </ListItemButton>*/}
-                    {/*            </ListItem>*/}
-                    {/*        )*/}
-                    {/*    })}*/}
-                    {/*</ListMenu>*/}
+                    <img src={navColor === 'white' ? BlissBlackIcon : BlissWhiteIcon } alt="icon bliss" width="150px" height="auto" />
+                    <Button variant="contained" color={navColor === 'white' ? "secondary" : "primary"} sx={{ml: 'auto'}}>Télécharger</Button>
                 </StyledToolbar>
             </AppBar>
         </ThemeProvider>
