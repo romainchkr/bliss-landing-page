@@ -69,6 +69,7 @@ const Header = () => {
                         variant='contained'
                         color='secondary'
                         sx={{
+                            width: '100%',
                             "&&:hover": {
                                 backgroundColor: "white",
                                 color: 'var(--secondary)'
