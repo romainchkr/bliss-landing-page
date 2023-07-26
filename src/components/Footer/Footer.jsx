@@ -45,8 +45,8 @@ const Footer = () => {
               justifyContent='space-between'
               alignItems="center"
           >
-            <FooterLink text={'Contact'} />
-            <Link href="#" variant="body2"
+            <FooterLink href="https://www.instagram.com/blissdatinggame/" target="true" text={'Contact'} />
+            <Link href="https://www.instagram.com/blissdatinggame/" target="_blank" variant="body2"
                   sx={{
                     ml: 1,
                     color: '#414141',
@@ -69,8 +69,8 @@ const Footer = () => {
         {/*</StackColumn>*/}
         <StackColumn>
           <FooterTitle text={'Legal'} />
-          <FooterLink text={'Confidentialité'} />
-          <FooterLink text={"Condition d'utilisation"} />
+          <FooterLink href="https://magnetic-queen-4a8.notion.site/Politique-de-confidentialit-5ee5b9e2c8254ddc9609243e3a225655?pvs=4" target={true} text={'Confidentialité'} />
+          <FooterLink href="https://magnetic-queen-4a8.notion.site/Conditions-g-n-rales-d-utilisation-90ff1e5e82e34766a928ee434737b8a5?pvs=4" target={true} text={"Condition d'utilisation"} />
           {/*<FooterLink text={'Cookies'} />*/}
         </StackColumn>
       </BoxRow>

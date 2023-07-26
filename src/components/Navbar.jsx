@@ -25,7 +25,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('.bloc');
             const navbarHeight = document.querySelector('nav').offsetHeight;
 
             sections.forEach((section) => {
@@ -55,7 +55,7 @@ const Navbar = () => {
             component="nav"
             position="fixed"
             sx={{
-                background: navColor,
+                backgroundColor: `${navColor} !important`,
                 p: '16px 2%'
             }}
             elevation={0}>

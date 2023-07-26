@@ -5,33 +5,24 @@ import {
 
 import ReviewCard from "./ReviewCard";
 
+import girl from '../../assets/girl.png';
 import man from '../../assets/man.png';
 import man1 from '../../assets/man1.png';
 import Title from "../Title";
 
 const reviewsItem = [
     {
-        text: "Excellent product with amazing support",
-        url: man1,
-        name: 'Marc'
+        text: "Outre l'aspect rencontre c'est un super jeu même entre potes !",
+        url: girl,
+        name: 'Barbara'
     },
     {
-        text: "Hands-down the best solution",
+        text: "Le concept est top ! J'adore les différents mini-jeux et le principe d'élimination qui se fait petit à petit. ",
         url: man,
         name: 'Naël'
     },
     {
-        text: "Our YoY growth increased by 127%",
-        url: man1,
-        name: 'Esther'
-    },
-    {
-        text: "Hands-down the best solution",
-        url: man,
-        name: 'Esther'
-    },
-    {
-        text: "Our YoY growth increased by 127%",
+        text: "C'est trop bien pour faire des rencontres de tout genre. Ca change des app de rencontres traditionnelles",
         url: man1,
         name: 'Esther'
     }
@@ -40,7 +31,7 @@ const reviewsItem = [
 const Reviews = () => {
 
     return (
-        <Box component="section" className="section-black" bgcolor="var(--secondary)">
+        <Box component="section" className="bloc section-black" bgcolor="var(--secondary)">
             <Title
                 text={
                     'Ils ont testés'

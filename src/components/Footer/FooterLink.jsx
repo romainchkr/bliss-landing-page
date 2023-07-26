@@ -1,10 +1,11 @@
 import { Link } from '@mui/material'
 import React from 'react'
 
-const FooterLink = ({ text }) => {
+const FooterLink = ({ text, href = '#', target = false}) => {
   return (
     <Link 
-    href="#"
+    href={href}
+    target={target ? '_blank' : "_self"}
     variant='p'
     component='a'
     sx={{

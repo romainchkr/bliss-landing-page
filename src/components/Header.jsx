@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Button, styled, Typography } from "@mui/material";
-import { Link } from 'react-router-dom'
+import Link from '@mui/material/Link'
 //img
-import headerImg from '../assets/app_overview2.png'
+import headerImg from '../assets/app_overview3.png'
 
 const Header = () => {
     const CustomBox = styled(Box) (({ theme }) => ({
@@ -13,6 +13,7 @@ const Header = () => {
         gap: theme.spacing(2),
         paddingTop: theme.spacing(10),
         backgroundColor: 'var(--tertiary)',
+        overflowY: 'visible',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
             alignItems: 'center',
@@ -36,10 +37,10 @@ const Header = () => {
 
 
   return  (
-        <CustomBox component='header'>
+        <CustomBox component='header' className="bloc section-purple">
             {/*  Box text  */}
             <BoxText
-            component='section' className="section-purple">
+            component='section'>
                 <Box height="90px"></Box>
                 <Typography sx={{
                     typography: { xs: 'h3', md: 'h2' },
@@ -63,6 +64,7 @@ const Header = () => {
 
                 <Box display="flex" gap="10px" justifyContent={{xs: "center", md: 'start'}}
                 flexDirection={{xs: "column", sm: 'row'}} width={{xs: '80%', sm: "auto"}} m={{xs: "auto"}}>
+                    <Link href="https://www.blissdatinggame.com">
                     <Button
                         variant='contained'
                         color='secondary'
@@ -73,9 +75,10 @@ const Header = () => {
                             }
                         }}>
                         <Typography variant="body1" textAlign="center">
-                        Jouer maintenant
+                                Jouer maintenant
                         </Typography>
                     </Button>
+                    </Link>
                     <Button
                         component={Link}
                         to={'/about'}
@@ -83,8 +86,8 @@ const Header = () => {
                         color='primary'
                         sx={{
                             "&&:hover": {
-                                backgroundColor: "white",
-                                color: 'var(--secondary)'
+                                backgroundColor: "var(--secondary)",
+                                color: 'white'
                             }
                         }}
                     >
@@ -95,7 +98,7 @@ const Header = () => {
                 </Box>
             </BoxText>
 
-            <Box component='section'  className="section-purple" p={0} sx={theme => ({
+            <Box component='section' p={0} sx={theme => ({
                 [theme.breakpoints.down('md')]:{
                     flex: '1',
                     paddingTop: '0px',
@@ -106,16 +109,24 @@ const Header = () => {
                     alignSelf: 'center',
                 },
             })}>
-                <Box height={{xs: "40vh", md:"80vh"}}>
-                    <img
-                        src={headerImg}
-                        alt="headerImg"
-                        style={{
-                            width: "auto",
-                            height: '100%',
-                            marginBottom: -15,
-                        }}
-                />
+                {/*<Box height={{xs: "40vh", md:"80vh"}} sx={{overflowX: 'hidden'}}>*/}
+                {/*    <img*/}
+                {/*        src={headerImg}*/}
+                {/*        alt="headerImg"*/}
+                {/*        style={{*/}
+                {/*            width: "auto",*/}
+                {/*            height: '100%',*/}
+                {/*            marginBottom: -15,*/}
+                {/*        }}*/}
+                {/*/>*/}
+                {/*</Box>*/}
+
+                <Box height={{xs: "40vh", md:"80vh"}} width={{xs: '80vw', md: '50vw'}}
+                     sx={{
+                         backgroundImage: `url(${headerImg})`,
+                         backgroundSize: 'contain',
+                         backgroundPosition: 'center',
+                         backgroundRepeat: 'no-repeat'}}>
                 </Box>
             </Box>
 

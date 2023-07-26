@@ -11,7 +11,7 @@ const Download = () => {
     return (
         <Stack
         component='section'
-        className="section-white"
+        className="bloc section-white"
         direction="column"
         justifyContent= 'center'
         alignItems='center'
@@ -43,8 +43,8 @@ const Download = () => {
             size="medium"
             sx={{
                 "&&:hover": {
-                    backgroundColor: "white",
-                    color: 'var(--secondary)'
+                    backgroundColor: "var(--secondary)",
+                    color: 'white'
                 }
             }}
             >
