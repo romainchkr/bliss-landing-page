@@ -6,7 +6,7 @@ import {
 
 const BenefitBlock = ({img, title, content}) => {
     const CustomTypographyTitle = styled(Typography)({
-        fontSize: '30px',
+        fontSize: '1.8em',
         lineHeight: '1.5',
         color: 'var(--primary)',
         fontWeight: '700',

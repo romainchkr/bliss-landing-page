@@ -8,25 +8,27 @@ import Title from './Title'
 // img
 import App1 from '../assets/app1.png';
 import App2 from '../assets/app2.png';
+import App3 from '../assets/app3.png';
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 
 const HowItWorks = () => {
-
     const sections = useRef(null);
     const section1 = useRef(null);
     const section2 = useRef(null);
     const section3 = useRef(null);
 
-    const CustomTypography = styled(Typography)({
+    const CustomTypography = styled(Typography) (({ theme }) => ({
         fontSize: '1.1rem',
         textAlign: 'start',
         lineHeight: '1.5',
         color: 'var(--secondary)',
         marginTop: '1.5rem',
-    })
-
+        [theme.breakpoints.down('md')]: {
+            fontSize: '1em'
+        }
+    }));
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +46,7 @@ const HowItWorks = () => {
                 animation: tl,
                 trigger: section1.current,
                 toggleActions: 'start pause reverse pause',
-                // markers: true, //to remove
+                markers: true, //to remove
                 start: 'top center',
                 end: () => '+=' + 400,
                 scrub: 1,
@@ -64,7 +66,7 @@ const HowItWorks = () => {
                 animation: tl3,
                 trigger: sections.current,
                 toggleActions: 'start pause reverse pause',
-                // markers: true, //to remove
+                markers: true, //to remove
                 start: '400px center',
                 end: () => '1800px center',
                 scrub: 1,
@@ -103,6 +105,7 @@ const HowItWorks = () => {
                                             "Le système de match <span class='gradientText'>le plus amusant</span> n'attend que toi"
                                         }
                                         color="secondary"
+                                        fontSize="1.5em"
                                     />
                                 </Box>
 
@@ -123,7 +126,6 @@ const HowItWorks = () => {
                         <Box display="flex" alignItems="center" justifyContent="space-between"
                              flexDirection={{xs: 'column', md: 'row'}}>
                             <Box flex="1 1 45%" display="flex" alignItems="stretch" justifyContent="center">
-                                <Box flex="1 1 45%" display="flex" alignItems="stretch" justifyContent="center">
                                     <Box id="imgApp2" component="img"
                                          sx={{
                                              flex: "1 1 auto", minWidth: "100%",
@@ -134,7 +136,6 @@ const HowItWorks = () => {
                                          alt="application"
                                          src={App1}
                                     />
-                                </Box>
                             </Box>
                             <Box flex="1 1 45%" display="flex" flexDirection="column" justifyContent="start" alignItems="start">
                                 <Box className="textopacityanimation2" sx={{opacity: '0'}}>
@@ -143,6 +144,7 @@ const HowItWorks = () => {
                                             "Échange avec les autres profils avant de séléctionner celui qui te <span class='gradientText'>correspond le plus</span> !"
                                         }
                                         color="secondary"
+                                        fontSize="1.5em"
                                     />
                                 </Box>
 
@@ -171,7 +173,7 @@ const HowItWorks = () => {
                                  width="100%"
                                 // height={{xs: "400px", md: "auto"}}
                                  alt="application"
-                                 src={App1}
+                                 src={App3}
                             />
                         </Box>
                         <Box flex="1 1 45%" display="flex" flexDirection="column" justifyContent="start" alignItems="start">
@@ -181,6 +183,7 @@ const HowItWorks = () => {
                                         "<span class='gradientText'>Un événement toutes</span> les semaines !"
                                     }
                                     color="secondary"
+                                    fontSize="1.5em"
                                 />
                             </Box>
 

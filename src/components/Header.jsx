@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, styled, Typography } from "@mui/material";
 import Link from '@mui/material/Link'
 //img
-import headerImg from '../assets/app_overview3.png'
+import headerImg from '../assets/app_overviewx2.png'
 
 const Header = () => {
     const CustomBox = styled(Box) (({ theme }) => ({
@@ -64,7 +64,7 @@ const Header = () => {
 
                 <Box display="flex" gap="10px" justifyContent={{xs: "center", md: 'start'}}
                 flexDirection={{xs: "column", sm: 'row'}} width={{xs: '80%', sm: "auto"}} m={{xs: "auto"}}>
-                    <Link href="https://www.blissdatinggame.com">
+                    <Link href="https://www.app.blissdatinggame.com" sx={{textDecoration: 'none'}}>
                     <Button
                         variant='contained'
                         color='secondary'
@@ -109,6 +109,7 @@ const Header = () => {
                     flex: '2',
                     alignSelf: 'center',
                 },
+                zIndex: '20'
             })}>
                 {/*<Box height={{xs: "40vh", md:"80vh"}} sx={{overflowX: 'hidden'}}>*/}
                 {/*    <img*/}

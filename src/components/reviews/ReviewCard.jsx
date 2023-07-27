@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     Avatar,
-    Box, Card, CardContent, styled,
+    Box, Card, CardContent,
     Typography,
 } from '@mui/material'
 

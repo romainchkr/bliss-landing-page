@@ -17,15 +17,15 @@ const reviewsItem = [
         name: 'Barbara'
     },
     {
-        text: "Le concept est top ! J'adore les différents mini-jeux et le principe d'élimination qui se fait petit à petit. ",
-        url: man,
-        name: 'Naël'
-    },
-    {
         text: "C'est trop bien pour faire des rencontres de tout genre. Ca change des app de rencontres traditionnelles",
         url: man1,
-        name: 'Esther'
-    }
+        name: 'Antoine'
+    },
+    {
+        text: "Le concept est top ! J'adore les différents mini-jeux et le principe d'élimination qui se fait petit à petit. ",
+        url: man,
+        name: 'Fanny'
+    },
 ];
 
 const Reviews = () => {
