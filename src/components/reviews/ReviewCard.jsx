@@ -13,7 +13,7 @@ const ReviewCard = ({url, text, name}) => {
                     <Avatar alt="visage utilisateur" src={url} sx={{width: '50px', height: '50px'}}/>
                     <Typography variant="h6">{name}</Typography>
                 </Box>
-                <Typography variant="h6">{text}</Typography>
+                <Typography variant="body1">{text}</Typography>
             </CardContent>
         </Card>
     );

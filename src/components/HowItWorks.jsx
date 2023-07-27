@@ -46,7 +46,7 @@ const HowItWorks = () => {
                 animation: tl,
                 trigger: section1.current,
                 toggleActions: 'start pause reverse pause',
-                markers: true, //to remove
+                // markers: true, //to remove
                 start: 'top center',
                 end: () => '+=' + 400,
                 scrub: 1,
@@ -66,7 +66,7 @@ const HowItWorks = () => {
                 animation: tl3,
                 trigger: sections.current,
                 toggleActions: 'start pause reverse pause',
-                markers: true, //to remove
+                // markers: true, //to remove
                 start: '400px center',
                 end: () => '1800px center',
                 scrub: 1,

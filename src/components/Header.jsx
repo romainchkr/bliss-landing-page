@@ -59,7 +59,7 @@ const Header = () => {
                     color: '#fff',
                 }}
                 >
-                    L'app qui va remplacer Tinder
+                    Tous les mardis à 19h
                 </Typography>
 
                 <Box display="flex" gap="10px" justifyContent={{xs: "center", md: 'start'}}
@@ -69,7 +69,7 @@ const Header = () => {
                         variant='contained'
                         color='secondary'
                         sx={{
-                            width: '100%',
+                            px: 3,
                             "&&:hover": {
                                 backgroundColor: "white",
                                 color: 'var(--secondary)'
@@ -80,22 +80,23 @@ const Header = () => {
                         </Typography>
                     </Button>
                     </Link>
-                    <Button
-                        component={Link}
-                        to={'/about'}
-                        variant='contained'
-                        color='primary'
-                        sx={{
-                            "&&:hover": {
-                                backgroundColor: "var(--secondary)",
-                                color: 'white'
-                            }
-                        }}
-                    >
-                        <Typography variant="body1" textAlign="center">
-                        Télécharger l'app
-                        </Typography>
-                    </Button>
+                    <Link href="https://www.app.blissdatinggame.com" sx={{textDecoration: 'none'}}>
+                        <Button
+                            variant='contained'
+                            color='primary'
+                            sx={{
+                                px: 3,
+                                "&&:hover": {
+                                    backgroundColor: "var(--secondary)",
+                                    color: 'white'
+                                }
+                            }}
+                        >
+                            <Typography variant="body1" textAlign="center">
+                            Télécharger l'app
+                            </Typography>
+                        </Button>
+                    </Link>
                 </Box>
             </BoxText>
 

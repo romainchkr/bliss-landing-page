@@ -34,13 +34,16 @@ const Reviews = () => {
         <Box component="section" className="bloc section-black" bgcolor="var(--secondary)">
             <Title
                 text={
-                    'Ils ont testés'
+                    "Ils ont testés et <span class='gradientText'>ils ont adorés !</span>"
                 }
-                textAlign={'center'}
                 color="primary"
+                fontSize="1.5em"
+                textAlign={'center'}
+
             />
+
             <Box component="div" width="90%" m='auto' p="20px"
-                display= "flex" sx={{overflowY: 'hidden', overflowX: 'scroll'}}>
+                display= "flex" sx={{overflowY: 'hidden', overflowX: 'scroll'}} justifyContent="center">
                 <Box display="flex" gap="40px">
                     {reviewsItem.map((item, index) => {
                         return (
