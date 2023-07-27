@@ -6,9 +6,9 @@ import {
 } from '@mui/material'
 import Title from './Title'
 // img
-import App1 from '../assets/app1.png';
+import App1 from '../assets/app1x.png';
 import App2 from '../assets/app2.png';
-import App3 from '../assets/app3.png';
+import App3 from '../assets/app3x.png';
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
