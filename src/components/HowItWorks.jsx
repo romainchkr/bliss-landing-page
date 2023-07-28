@@ -6,9 +6,9 @@ import {
 } from '@mui/material'
 import Title from './Title'
 // img
-import App1 from '../assets/app1x.png';
+import App1 from '../assets/app1.png';
 import App2 from '../assets/app2.png';
-import App3 from '../assets/app3x.png';
+import App3 from '../assets/app3.png';
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
@@ -93,9 +93,10 @@ const HowItWorks = () => {
                                          transform: 'scale(0,0)'
                                      }}
                                      width="100%"
+                                     maxWidth="650px"
                                     // height={{xs: "400px", md: "auto"}}
                                      alt="application"
-                                     src={App2}
+                                     src={App1}
                                 />
                             </Box>
                             <Box flex="1 1 45%" display="flex" flexDirection="column" justifyContent="start" alignItems="start">
@@ -132,9 +133,9 @@ const HowItWorks = () => {
                                              transform: 'scale(0,0)'
                                          }}
                                          width="100%"
-                                        // height={{xs: "400px", md: "auto"}}
+                                         maxWidth="650px"
                                          alt="application"
-                                         src={App1}
+                                         src={App2}
                                     />
                             </Box>
                             <Box flex="1 1 45%" display="flex" flexDirection="column" justifyContent="start" alignItems="start">
@@ -171,7 +172,7 @@ const HowItWorks = () => {
                                      transform: 'scale(0,0)'
                                  }}
                                  width="100%"
-                                // height={{xs: "400px", md: "auto"}}
+                                 maxWidth="650px"
                                  alt="application"
                                  src={App3}
                             />

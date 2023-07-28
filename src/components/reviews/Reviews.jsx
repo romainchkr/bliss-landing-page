@@ -39,11 +39,10 @@ const Reviews = () => {
                 color="primary"
                 fontSize="1.5em"
                 textAlign={'center'}
-
             />
 
             <Box component="div" width="90%" m='auto' p="20px"
-                display= "flex" sx={{overflowY: 'hidden', overflowX: 'scroll'}} justifyContent="center">
+                display= "flex" sx={{overflowY: 'hidden', overflowX: 'scroll'}} justifyContent={{xs: 'start', md: "center"}}>
                 <Box display="flex" gap="40px">
                     {reviewsItem.map((item, index) => {
                         return (

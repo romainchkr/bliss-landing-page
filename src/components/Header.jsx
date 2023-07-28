@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, styled, Typography } from "@mui/material";
 import Link from '@mui/material/Link'
 //img
-import headerImg from '../assets/app_overviewx2.png'
+import headerImg from '../assets/app_overview.png'
 
 const Header = () => {
     const CustomBox = styled(Box) (({ theme }) => ({
