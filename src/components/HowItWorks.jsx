@@ -79,7 +79,7 @@ const HowItWorks = () => {
     }, [])
 
     return (
-        <Box className="bloc section-white">
+        <Box className="bloc section-white" bgcolor="white">
             <Box ref={sections} position="relative">
                 <Box position="absolute" top="0" left="0" width="100%" height="100%" zIndex="10">
                     <Box ref={section1} component="section" bgcolor="white" width="90%" margin="auto"

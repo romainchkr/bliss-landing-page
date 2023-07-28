@@ -31,7 +31,7 @@ const reviewsItem = [
 const Reviews = () => {
 
     return (
-        <Box component="section" className="bloc section-black" bgcolor="var(--secondary)">
+        <Box component="section" className="bloc section-black" bgcolor="var(--secondary)" zIndex="100" position="relative">
             <Title
                 text={
                     "Ils ont testés et <span class='gradientText'>ils ont adorés !</span>"
@@ -42,7 +42,7 @@ const Reviews = () => {
             />
 
             <Box component="div" width="90%" m='auto' p="20px"
-                display= "flex" sx={{overflowY: 'hidden', overflowX: 'scroll'}} justifyContent={{xs: 'start', md: "center"}}>
+                display= "flex" sx={{overflowY: 'hidden', overflowX: 'scroll'}} justifyContent={{xs: 'start', lg: "center"}}>
                 <Box display="flex" gap="40px">
                     {reviewsItem.map((item, index) => {
                         return (
